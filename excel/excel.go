@@ -13,6 +13,11 @@ var Opts = plugin.PluginOptions{
 				"write_excel_file": Method_write_file,
 			},
 			InitFunc: excel_initfunc,
+			Description: `Processor sbl.systems/synwork/excel provides methods to handle excel files.
+			
+			actual 
+			  - write_excel_file
+			`,
 		}
 	},
 }

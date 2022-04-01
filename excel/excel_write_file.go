@@ -87,6 +87,33 @@ var Method_write_file = &schema.Method{
 	Schema:   excel_file,
 	Result:   map[string]*schema.Schema{},
 	ExecFunc: excel_write_file,
+	Description: `Method write_excel_file provides a way to create excel file based on a configuration.
+
+	method "write_excel_file" "processor-instance" "method-instance" {
+		file-name = "test01.xlsx"
+		sheet {
+			name = "sheet01"
+			cell { 
+				name = "A1"
+				value = "content of field A1"
+			}
+			cell { 
+				name = "A2:C3"
+				double_value = 1.22
+				style = "grey"
+			}
+		}
+		style {
+			name = "grey"
+			fill {
+				color   = "#888888,#FFFFFF"
+				type    = "gradient"
+				shading = 1
+			}
+		}
+	}
+	
+	`,
 }
 
 func excel_write_file(ctx context.Context, data *schema.MethodData, client interface{}) error {
