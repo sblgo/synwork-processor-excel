@@ -1,6 +1,6 @@
 module sbl.system/synwork/synwork-processor-excel
 
-go 1.17
+go 1.18
 
 replace sbl.systems/go/synwork/plugin-sdk => ../synwork/plugin-sdk
 
